@@ -5,7 +5,7 @@ import base64
 
 img_size_px = 70
 categories = ['Dog', 'Cat']
-model = tf.keras.models.load_model("../64x3-CNN.model")
+model = tf.keras.models.load_model("64x3-CNN.model")
 
 
 def prepare(image_base64):
