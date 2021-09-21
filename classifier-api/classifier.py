@@ -3,7 +3,7 @@ import cv2
 import numpy as np
 import base64
 
-img_size_px = 70
+img_size_px = 120
 categories = ['Dog', 'Cat']
 model = tf.keras.models.load_model("64x3-CNN-grey-high-res.model")
 
