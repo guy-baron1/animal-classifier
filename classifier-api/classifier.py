@@ -17,5 +17,7 @@ def prepare(image_base64):
 
 def generate_prediction(image_base64):
     prediction = model.predict([prepare(image_base64)])
-    print(prediction[0][0])
-    return {'prediction': categories[int(prediction[0][0])]}
+    prediction_index = tf.argmax(prediction, axis=-1, output_type=tf.int32)
+    prediction_label = categories[prediction_index[0]]
+    print(prediction)
+    return {'prediction': prediction_label, 'confidence': f'{prediction[0][prediction_index[0]] * 100}%'}
