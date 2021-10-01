@@ -1,8 +1,10 @@
 from flask import Flask, request
 from flasgger import Swagger, swag_from
+from flask_cors import CORS
 import classifier
 
 app = Flask(__name__)
+CORS(app)
 app.config["SWAGGER"] = {"title": "Swagger-UI", "uiversion": 2}
 swagger_config = {
     "headers": [],
